@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Truck Parking Monitor</title>
+  <script>
+    function fetchStatus() {
+      fetch('/status')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('free').textContent = data.free;
+          document.getElementById('occupied').textContent = data.occupied;
+        });
+    }
+
+    // Call fetchStatus every 90 seconds
+    setInterval(fetchStatus, 5000);
+    console.log("check")
+    // Call it once on load
+    window.onload = fetchStatus;
+  </script>
+</head>
+<body>
+  <h1>🚛 Truck Parking Status</h1>
+  <p>🟢 Free Spots: <span id="free">Loading...</span></p>
+  <p>🔴 Occupied Spots: <span id="occupied">Loading...</span></p>
+  <h2>🎥 Live Video Feed</h2>
+  <img src="{{ url_for('video_feed') }}" width="800" />
+</body>
+</html>
