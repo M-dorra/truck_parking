@@ -26,11 +26,20 @@ cd truck-parking-spot-count
 ```bash
 pip install flask opencv-python tensorflow numpy
 ```
-3. **Run the Flask app:**
+3. **Train the model**(⚠️ Required — model file not included):
+
+The pre-trained model.h5 file is not included due to file size limitations.
+👉 To generate it, run the notebook below:
+
+```bash
+jupyter notebook training.ipynb
+```
+
+4. **Run the Flask app:**
 ```bash
 python main.py
   ```
-4. **Open your browser at:** http://127.0.0.1:5000/
+5. **Open your browser at:** http://127.0.0.1:5000/
    
 ---
 
